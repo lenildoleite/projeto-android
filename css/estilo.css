@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: "idroid";
+    src: url("../fontes/idroid.otf") format("opentype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*VARIAVEIS DE COR E FONTE*/
+
+
+:root{
+    --cor00:#c5ebd6;
+    --cor01:#83e1ad;
+    --cor02:#3ddc84;
+    --cor03:#2fa866;
+    --cor04:#1a5c37;
+    --cor05:#063d1e;
+
+    --fonte-padrao: sans-serif;
+    --fonte-header: 'bebas neue', sans-serif;
+    --fonte-artigo-h: 'idroid', sans-serif;
+}
+
+/*ESTILOS DE CONTEUDO*/
+
+body {
+    margin: 0px;
+    background-color: var(--cor00);
+    font-family: var(--fonte-padrao);
+    font-size: 0.9em;
+}
+
+*{
+    margin: 0px;
+}
+
+strong{
+    color:var(--cor03);
+}
+
+header {
+    background-image: linear-gradient(180deg, var(--cor04), var(--cor03));
+    min-height: 100px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    padding-top:30px;
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+}
+header h1{
+    font-family: var(--fonte-header);
+    font-size: 3em;
+}
+
+header p{
+    font-size: 1em;
+}
+
+nav {
+    text-align: left;
+    padding: 10px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 300px;
+    max-width: 800px;
+}
+
+nav>a {
+    display: inline-block;
+    margin: 0px 10px 0px 0px;
+    color: rgb(200, 250, 150);
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+nav a:hover{
+    color: white;
+    transition-duration: .5s; /* a animação parte do estado inicial. se eu colocar no a, ele inicia do estado padrão do navegador (serifa, azul, sublinhado, e o caralho a quatro) */
+
+}
+
+main {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    min-width: 300px;
+    max-width: 800px;
+    text-align: justify;
+    padding-bottom: 10px;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 0px 0px 10px 10px;
+}
+
+article h1, h2, p {
+    padding: 10px 20px;
+}
+
+article h1, h2 {
+    font-family: var(--fonte-artigo-h);
+    color: rgb(0, 100, 30);
+    text-align: left;
+}
+
+article h2 {
+    background-image: linear-gradient(90deg, var(--cor01),transparent); /*Aprendi que da pra colocar transparent pra descrever uma cor!*/
+    padding: 3px 20px;
+    font-size: 1.2em;
+}
+
+article > p::before {
+    content: "      ";
+    white-space: pre;
+}
+
+article  a{
+    color: var(--cor04);
+    font-weight: bold;
+}
+
+article a:hover{
+    color: white;
+    font-weight: bold;
+    background-color: var(--cor03);
+    padding: 2px;
+    transition-duration: .5s;
+    text-decoration: none;
+}
+
+picture {
+    display: block;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+img{
+    display: block;
+    margin: auto;
+}
+
+img.scalable{
+    overflow-x: hidden;
+    width: 100%;
+}
+
+abbr{
+    text-decoration: none;
+}
+
+div.video{
+    background-color:  var(--cor05);
+    margin-bottom: 70px;
+    position: relative;
+    padding-bottom: 50%;
+
+}
+
+/*Guanabara colocou o iframe dentro de uma div da classe video. vale a pena? Veirifiquei que sim, pois consigo definir o iframe com position absolte DENTRO da div,que fica com position relative*/
+
+div.video > iframe{
+    position: absolute; /*com position absolute eu consigo configurar top e left (se eu precisasse reposicionar, e o width e height - 100% , mas DENTRO da div - , conforme mostrado abaixo:*/
+
+    width: 100%;
+    height: 113%;
+}
+
+aside{
+    background-color: var(--cor00);
+    margin: 10px 20px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+aside > h1{
+    font-weight: normal;
+    background-color: var(--cor04);
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+}
+
+aside  a {
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+aside a:hover{
+    color: var(--cor03);
+    background-color: transparent;
+    padding: 0px;
+    text-decoration: underline;
+}
+
+aside ul{
+    list-style-position: inside;
+    columns: 2; /* NÃO PRECISA DE DIV!!!!!*/
+    list-style-type: "\2714\00A0\00A0"; /* a conmtrabarra faz o codigo do emoji funcionar - 2714 é o codigo do visto, e o 00A0 é o espaço sem quebra*/
+}
+
+
+
+footer {
+    background-color: var(--cor05);
+    padding: 3px;
+    text-align: center;
+    font-family: var(--fonte-padrao);
+    color: rgb(255, 255, 255);
+    font-size: 0.8em;
+    min-height:20px;
+}
+
+footer>p{
+    vertical-align: middle;
+}
+
+footer a {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    font-weight: bolder;
+}
